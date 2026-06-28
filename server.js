@@ -32,10 +32,3 @@ app.post("/upload", upload.single("image"), (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Listening on ${PORT}`);
 });
-~                                                                                                                            
-~                                                                                                                            
-~                                                                                                                            
-~                                                                                                                            
-~                                                                                                                            
-~                                                                                                                            
-~                                                       
