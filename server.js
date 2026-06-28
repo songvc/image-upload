@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const uploadDir = path.join(process.cwd(), "public/uploads");
 
 fs.mkdirSync(uploadDir, { recursive: true });
