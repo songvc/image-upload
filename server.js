@@ -2,12 +2,21 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 const uploadDir = path.join(process.cwd(), "public/uploads");
 
 fs.mkdirSync(uploadDir, { recursive: true });
+
+app.use(cors({
+  origin: true,
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
+app.options("*", cors());
 
 const storage = multer.diskStorage({
   destination: (_, __, cb) => cb(null, uploadDir),
